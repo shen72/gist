@@ -6,7 +6,10 @@ find_package(OpenCV REQUIRED)
 add_executable(extGist gist_feature.cpp feature.cpp extGist.cc)
 add_executable(coloronly coloronly.cc colorport.cc)
 add_executable(colortool colortool.cc colorport.cc)
+add_executable(extColorGist gist_feature.cpp feature.cpp 
+  colorport.cc colorgist.cc extColorGist)
 
 target_link_libraries(extGist ${OpenCV_LIBS} )
 target_link_libraries(coloronly ${OpenCV_LIBS} gflags glog )
 target_link_libraries(colortool ${OpenCV_LIBS} gflags glog )
+target_link_libraries(extColorGist ${OpenCV_LIBS} gflags glog )
